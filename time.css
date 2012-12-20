@@ -1,0 +1,353 @@
+body{
+	/background-image: url('https://dl.dropbox.com/u/5658482/cross.png');
+	background-repeat: no-repeat;
+	background-position:top center;
+ 	background-color:#ddd;
+}
+
+
+/.blackmask{
+	position: absolute;	
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .35);
+	box-shadow: 0 0 800px rgba(0,0,0,.5) inset;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+
+#time-panel{
+	width: 600px;
+	margin: 0 auto;
+}
+
+.time{
+	display: inline-block;
+	position: relative;
+	box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+	padding: 10px 10px 6px;
+	border-radius: 6px;
+	/background-color: hsl(0, 0%, 97%);
+	background-color: white;
+	border: 2px solid #386FA5;
+	margin: 0 auto;
+ 	margin-top:100px;
+}
+
+.time::before{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 10px solid white;
+	border-bottom: 10px solid #386FA5;
+	border-top: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	bottom: 100%;
+	left: 28px;
+}
+
+.main{
+	display: inline-block;
+	position: relative;
+}
+
+
+.time-input{
+	position: relative;
+	height: 34px;
+	margin-bottom: 8px;
+}
+
+.time-input >.enter{
+	position: absolute;
+	width: 15px;
+	height: 30px;
+	right: 7px;
+	bottom: 0;
+	opacity: .75;
+	background: url(https://dl.dropbox.com/u/5658482/enter_blue.png) no-repeat;
+	background-position: 0 12px;
+}
+
+.time-input >.enter:hover{
+	opacity: 1;
+}
+
+.time-input textarea{
+	position: absolute;
+	border-style: dashed;
+	border-color: hsl(211, 60%, 69%);
+	margin: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	color: #386FA5;
+	font:lighter 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	resize: none;
+}
+
+.time-input textarea:hover{
+	background-color: #f5f5f5;
+}
+
+.time-input textarea:focus{
+	background-color: white;
+}
+
+#cal{
+	margin-top: 8px;
+	height: 170px;
+	position: relative;
+	border-radius: 3px;
+	background-color: #fcfcfc;
+}
+
+.week, .day table{
+	border-collapse: collapse;
+}
+
+.day td,.week td{
+	width: 50px;
+}
+
+.week{
+	border-radius: 3px 3px 0 0;
+	background-color: #386FA5;
+}
+.week tr{
+	text-align: center;
+	font: lighter 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #cfe1f4;
+}
+
+.week td{
+	border: 1px solid transparent;
+}
+
+
+.day{
+position: absolute;
+	overflow-y: auto;
+	display: inline-block;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.35) inset;
+	border-radius: 0 0 3px 3px;
+	top: 20px;
+	bottom: 0;
+}
+
+.day table{
+	font: lighter 16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: hsl(211, 29%, 57%);
+}
+
+.day td{
+	text-align: center;
+	border: 1px solid rgba(0,0,0,0.08);
+	height: 50px;
+}
+
+.day td:hover{
+	background-color:#F2F2F2;
+	color: #386ea2;
+}
+
+.day .today{
+	background-color: #f3f9d7;
+}
+
+.day .today:hover{
+	background-color: #eaf3ba;
+	font-weight: 300;
+}
+
+.day .selected{
+	background-color: #386FA5;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+}
+
+.day .selected:hover{
+	background-color: #386FA5;
+	color: white;
+	font-weight: bold;
+}
+
+/.1th{
+	border-top: 2px solid #ccc;
+	border-left: 2px solid #ccc;
+}
+
+/.2-7th{
+	border-top: 2px solid #ccc;
+}
+
+
+.side-float{
+	width: 140px;
+	float: right;
+}
+
+.side{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 140px;
+	border-radius: 0 3px 3px 0;
+	overflow-y: auto;
+	background: -moz-linear-gradient(360deg, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0) 5%) #386FA5;
+	background: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0, 0, 0, 0.07)), color-stop(0.05, rgba(0, 0, 0, 0))) #386FA5;
+}
+
+.side-switch{
+	position: absolute;
+	right: -10px;
+	bottom: 50%;
+	margin-bottom: -15px;
+	width: 7px;
+	background-color: transparent;
+	height: 30px;
+	border-radius: 3px 0 0 3px;
+	/box-shadow: 0 0px 2px rgba(0,0,0,.2) inset;
+	border: 1px solid #eeeeee;
+	border-right-style: none;
+}
+
+.side-switch::before{
+content: "";
+width: 0;
+height: 0;
+border-top: 4px solid transparent;
+border-right: 4px solid rgba(0,0,0,0.35);
+border-bottom: 4px solid transparent;
+border-left: 4px solid transparent;
+position: absolute;
+top: 11px;
+right: 2px;
+}
+
+.side-switch.after::before{
+    border-right: 4px solid transparent;
+    border-left: 4px solid rgba(0,0,0,0.35);
+    right: -3px;
+}
+
+.side-switch:hover{
+	background-color: #ddd;
+  	/box-shadow: 1px 0px 5px rgba(0,0,0,0.3) inset;  
+}
+
+.side-switch:active{
+	background-color: #aaa;
+}
+
+.number dt, .number dd{
+	height: 13px;
+}
+
+.number dt:active, .number dd:active{
+	background-color: #1e4e7e;
+}
+
+.number dt::before, .number dd::before{
+	content: "";
+	position: absolute;
+	border-top: 1px solid white;
+	margin-top: 6px;
+	left: 0;
+}
+
+.number dt:hover::before, .number dd:hover::before{
+	border-top: 2px solid white;
+}
+
+.number dt::before{
+	width: 12px;
+}
+
+.number dd::before{
+	width: 4px;
+}
+
+.number *{
+	margin: 0;
+	width: 100%;
+	color: #CFE1F4;
+	font: lighter 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-align: left;
+	text-indent: 16px;
+	line-height: 12px;
+}
+
+.number dd, .number small{
+	color: transparent;
+}
+
+.number small{
+	position: relative;
+}
+
+.number small::before{
+	content: "";
+	position: relative;
+	left: -15px;
+	width: 20px;
+	display: inline-block;
+	white-space: pre;
+	
+}
+
+.number small:nth-child(1)::before{
+	content: ":00";
+}
+
+.number small:nth-child(2)::before{
+	content: ":15";
+}
+
+.number small:nth-child(3)::before{
+	content: ":30";
+}
+
+.number small:nth-child(4)::before{
+	content: ":45";
+}
+
+
+.number dt:nth-last-of-type(n+6) small::after,.number dd:nth-last-of-type(n+9) small::after{
+	position: absolute;
+	height: 100%;
+	right: -24px;
+	bottom:-1px;
+	line-height: 12px;
+	content: "AM";
+	white-space: pre;
+}
+
+.number dt:nth-of-type(n+4) small::after,.number dd:nth-of-type(n+9) small::after{
+	position: absolute;
+	height: 100%;
+	right: -24px;
+	bottom: -1px;
+	line-height: 12px;
+	content: "PM";
+	white-space: pre;
+}
+
+.number dt:hover, .number dd:hover{
+	font-weight: bold;
+}
+
+.number dt:hover, .number dd:hover, .number small:hover{
+	color: white;
+}
